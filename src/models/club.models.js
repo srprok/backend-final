@@ -16,9 +16,8 @@ const ClubSchema = new Schema({
         required: [true, "Debe ingresar una mascota."]
     },
     petage:{type: Number},
-    kind: {type: String},
     breed: {type: String},
-    picture: {type: String},
+    message: {type: String},
     created_at: {
         type: Date,
         default: Date.now}
