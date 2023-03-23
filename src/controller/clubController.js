@@ -4,7 +4,6 @@ const getClubService = require('../services/getClubService');
 const getClubByIdService = require('../services/getClubByIdService');
 const updateClubService = require('../services/updateClubService');
 const deleteClubByIdService = require('../services/deleteClubService');
-const addImageMiddleware = require('../utils/middlewares/getImageMiddleware');
 
 const getClubController = async (req, res) => {
     try {
