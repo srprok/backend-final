@@ -1,3 +1,6 @@
+//Este middleware busca en la api la raza ingresada por el usuario, si hay coincidencia, lo agrega, 
+//de lo contrario indica que la raza no fue encontrada y no agrega el nuevo usuario.
+
 const axios = require('axios');
 
 const addBreedMiddleware = async (req, res, next) => {
@@ -21,7 +24,7 @@ const addBreedMiddleware = async (req, res, next) => {
     })
 
     for (x of data) {
-       
+        //console.log(x.name)
         const breedName = x.name
 
         const minus2 = breedName.toLowerCase()
@@ -34,10 +37,9 @@ const addBreedMiddleware = async (req, res, next) => {
             return next();
         }
     }
-    if(coincidence === false)
-        res.status(400).send("Raza no encontrada")
-        }
+    if (coincidence === false) res.status(400).send("Error: raza no encontrada")
+}
 
-    module.exports = addBreedMiddleware;
+module.exports = addBreedMiddleware;
 
 
